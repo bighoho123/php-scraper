@@ -21,16 +21,18 @@
 
 	// Get title
 	$crwaler->filter('.result-item')->each(function ($node) {
+		/* Title & Link */
 		$node->filter("h2 a")->each(function($node_1){
-		    print preg_replace("/<span.*span>/s","",$node_1->html())."<br>";
+		    print trim(preg_replace("/<span.*span>/s","",$node_1->html()))."<br>";
+		    print "http://www.carsales.com.au".$node_1->attr("href")."<br>";
 		});
-
+		/* Price */
 		$node->filter(".additional-information .price a")->each(function($node_2){
 		    print $node_2->attr('data-price')."<br>";
 		});
-
+		/* Odometer */
 		$node->filter(".vehicle-features .item-odometer")->each(function($node_2){
-		    print $node_2->text()."<br>";
+		    print preg_replace(array("/<i.*i>/","/,/","/ km$/"),array("","",""),$node_2->html())."<br>";
 		});
 	    echo "<hr>";
 	});
