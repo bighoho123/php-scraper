@@ -2,7 +2,8 @@
     "name": "zr/scraper",
     "description": "The php scraper built on top of Goutte",
     "require": {
-        "fabpot/goutte": "^2.0"
+        "fabpot/goutte": "^2.0",
+        "katzgrau/klogger": "dev-master"
     },
     "authors": [
         {
