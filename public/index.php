@@ -1,6 +1,8 @@
 <?php 
-	date_default_timezone_set('UTC');
+	date_default_timezone_set('Australia/Adelaide');
 	set_time_limit("600");
+
+	chdir(dirname(__FILE__));
 
 	require_once("../config.php");
 	require_once("../vendor/autoload.php");
